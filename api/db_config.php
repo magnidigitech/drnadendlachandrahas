@@ -5,9 +5,9 @@ header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
 $host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "dr_chandrahas_db";
+$user = "u384594965_chandrahas";
+$pass = "Magni@3939";
+$dbname = "u384594965_chandrahas";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 
