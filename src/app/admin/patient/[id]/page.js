@@ -1,3 +1,9 @@
+export function generateStaticParams() {
+    // For static export, we need to pre-define IDs or handle them as needed.
+    // Since this is a tracking tool, we can pre-generate a few or handle it via client-side routing.
+    return [{ id: '1' }, { id: '2' }, { id: '3' }];
+}
+
 export default function PatientTracking({ params }) {
     const { id } = params;
 
