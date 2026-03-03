@@ -10,7 +10,7 @@ export default function Home() {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        background: 'radial-gradient(circle at top right, rgba(109, 40, 217, 0.05), transparent), radial-gradient(circle at bottom left, rgba(219, 39, 119, 0.05), transparent)'
+        background: 'radial-gradient(circle at top right, rgba(238, 149, 158, 0.08), transparent), radial-gradient(circle at bottom left, rgba(244, 114, 182, 0.05), transparent)'
       }}>
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '4rem', alignItems: 'center' }}>
           <div>
@@ -115,11 +115,11 @@ export default function Home() {
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-              <div style={{ padding: '1.5rem', borderLeft: '4px solid var(--primary)', background: 'rgba(109, 40, 217, 0.05)' }}>
+              <div style={{ padding: '1.5rem', borderLeft: '4px solid var(--primary)', background: 'rgba(238, 149, 158, 0.05)' }}>
                 <h4 style={{ marginBottom: '0.5rem' }}>Education</h4>
                 <p style={{ fontSize: '0.9rem', opacity: 0.7 }}>MBBS | MS | FMAS</p>
               </div>
-              <div style={{ padding: '1.5rem', borderLeft: '4px solid var(--secondary)', background: 'rgba(219, 39, 119, 0.05)' }}>
+              <div style={{ padding: '1.5rem', borderLeft: '4px solid var(--secondary)', background: 'rgba(244, 114, 182, 0.05)' }}>
                 <h4 style={{ marginBottom: '0.5rem' }}>Specialization</h4>
                 <p style={{ fontSize: '0.9rem', opacity: 0.7 }}>Obstetrician & Gynaecologist</p>
               </div>
@@ -129,11 +129,11 @@ export default function Home() {
       </section>
 
       {/* Contact Section Mock */}
-      <section id="contact" className="section-padding" style={{ background: 'var(--foreground)', color: 'white' }}>
+      <section id="contact" className="section-padding" style={{ background: 'var(--primary)', color: 'white' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>Ready to <span className="gradient-text">Consult?</span></h2>
-          <p style={{ marginBottom: '3rem', opacity: 0.6 }}>Book your appointment online or visit our clinic.</p>
-          <a href="#" className="btn btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>Get in Touch</a>
+          <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem', color: 'white' }}>Ready to Consult?</h2>
+          <p style={{ marginBottom: '3rem', opacity: 0.9 }}>Book your appointment online or visit our clinic.</p>
+          <a href="#" className="btn glass" style={{ fontSize: '1.2rem', padding: '1rem 3rem', background: 'white', color: 'var(--primary)' }}>Get in Touch</a>
         </div>
       </section>
 
