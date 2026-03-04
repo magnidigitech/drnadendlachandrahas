@@ -1,9 +1,9 @@
 export default function DoctorOverview() {
     const stats = [
-        { label: "Today's Appointments", value: "12", sub: "4 Completed", color: "var(--primary)" },
+        { label: "Today's Appointments", value: "12", sub: "4 Completed", color: "var(--accent)" },
         { label: "Total Patients", value: "1,284", sub: "+5 this week", color: "var(--secondary)" },
         { label: "High-Risk Patients", value: "8", sub: "Needs urgent review", color: "#ef4444" },
-        { label: "Pending Reports", value: "15", sub: "Ready for signature", color: "var(--accent)" },
+        { label: "Pending Reports", value: "15", sub: "Ready for signature", color: "var(--secondary)" },
     ];
 
     const quickActions = [
@@ -14,13 +14,13 @@ export default function DoctorOverview() {
     ];
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
             {/* Stats Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.2rem' }}>
                 {stats.map((s, i) => (
-                    <div key={i} className="glass" style={{ padding: '2rem', borderRadius: '30px', borderLeft: `6px solid ${s.color}` }}>
-                        <p style={{ fontSize: '0.85rem', opacity: 0.6, marginBottom: '0.5rem' }}>{s.label}</p>
-                        <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem' }}>{s.value}</h3>
+                    <div key={i} style={{ padding: '1.5rem', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'white' }}>
+                        <p style={{ fontSize: '0.75rem', opacity: 0.5, marginBottom: '0.5rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{s.label}</p>
+                        <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--primary)' }}>{s.value}</h3>
                         <p style={{ fontSize: '0.75rem', fontWeight: 600, color: s.color }}>{s.sub}</p>
                     </div>
                 ))}
@@ -28,12 +28,12 @@ export default function DoctorOverview() {
 
             {/* Quick Actions */}
             <div>
-                <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', fontWeight: 700 }}>Quick <span className="gradient-text">Actions</span></h2>
-                <div style={{ display: 'flex', gap: '1.5rem' }}>
+                <h2 style={{ fontSize: '1.1rem', marginBottom: '1.2rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.05em' }}>QUICK ACTIONS</h2>
+                <div style={{ display: 'flex', gap: '1rem' }}>
                     {quickActions.map((action, i) => (
-                        <button key={i} className="glass btn" style={{ flex: 1, padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', borderRadius: '25px', transition: 'transform 0.2s ease' }}>
-                            <span style={{ fontSize: '2.5rem' }}>{action.icon}</span>
-                            <span style={{ fontWeight: 700 }}>{action.label}</span>
+                        <button key={i} className="btn" style={{ flex: 1, padding: '1.2rem', display: 'flex', alignItems: 'center', gap: '1rem', borderRadius: '6px', border: '1px solid var(--glass-border)', background: 'white', transition: 'all 0.1s ease', color: 'var(--primary)' }}>
+                            <span style={{ fontSize: '1.2rem' }}>{action.icon}</span>
+                            <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{action.label}</span>
                         </button>
                     ))}
                 </div>
@@ -41,43 +41,44 @@ export default function DoctorOverview() {
 
             {/* Main Content Area: Appointments & Reports */}
             <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '2rem' }}>
-                <div className="glass" style={{ padding: '2.5rem', borderRadius: '30px' }}>
-                    <h3 style={{ marginBottom: '1.5rem' }}>Today's <span className="gradient-text">Appointments</span></h3>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div style={{ padding: '2rem', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'white' }}>
+                    <h3 style={{ marginBottom: '1.5rem', fontSize: '1rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase' }}>Today's Appointments</h3>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                         {[
                             { time: "09:00 AM", name: "Lakshmi Devi", type: "Prenatal Checkup", status: "In Consultation" },
                             { time: "10:30 AM", name: "Padma Rao", type: "Gynecological Exam", status: "Waiting" },
                             { time: "11:45 AM", name: "Anjali Reddy", type: "Post-op Follow-up", status: "Waiting" },
                         ].map((apt, i) => (
-                            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', borderBottom: '1px solid var(--glass-border)' }}>
+                            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', borderBottom: '1px solid #f1f5f9' }}>
                                 <div>
-                                    <p style={{ fontWeight: 800 }}>{apt.name}</p>
+                                    <p style={{ fontWeight: 700, fontSize: '0.95rem' }}>{apt.name}</p>
                                     <p style={{ fontSize: '0.8rem', opacity: 0.6 }}>{apt.type} • {apt.time}</p>
                                 </div>
                                 <span style={{
-                                    padding: '0.5rem 1rem',
-                                    borderRadius: '20px',
-                                    fontSize: '0.75rem',
-                                    fontWeight: 700,
-                                    background: apt.status === 'In Consultation' ? 'rgba(238, 149, 158, 0.1)' : 'rgba(0, 0, 0, 0.05)',
-                                    color: apt.status === 'In Consultation' ? 'var(--primary)' : 'inherit'
-                                }}>{apt.status}</span>
+                                    padding: '0.3rem 0.8rem',
+                                    borderRadius: '4px',
+                                    fontSize: '0.7rem',
+                                    fontWeight: 800,
+                                    background: apt.status === 'In Consultation' ? 'var(--primary-light)' : '#f8fafc',
+                                    color: apt.status === 'In Consultation' ? 'var(--accent)' : 'var(--secondary)',
+                                    border: '1px solid var(--glass-border)'
+                                }}>{apt.status.toUpperCase()}</span>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="glass" style={{ padding: '2.5rem', borderRadius: '30px' }}>
-                    <h3 style={{ marginBottom: '1.5rem' }}>Lab <span className="gradient-text">Reports</span></h3>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <div style={{ padding: '2rem', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'white' }}>
+                    <h3 style={{ marginBottom: '1.5rem', fontSize: '1rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase' }}>Lab Reports</h3>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                         {[
                             { patient: "Nisha Sharma", test: "Hemoglobin Panel", urgency: "Normal" },
                             { patient: "Meera Kaur", test: "Anatomy Scan", urgency: "Review Needed" },
                         ].map((rep, i) => (
-                            <div key={i} style={{ background: 'white', padding: '1.2rem', borderRadius: '20px', border: '1px solid var(--glass-border)' }}>
-                                <p style={{ fontSize: '0.9rem', fontWeight: 700 }}>{rep.patient}</p>
-                                <p style={{ fontSize: '0.8rem', opacity: 0.7, marginBottom: '0.8rem' }}>{rep.test}</p>
-                                <button className="btn btn-primary" style={{ padding: '0.4rem 1rem', fontSize: '0.75rem', width: '100%', justifyContent: 'center' }}>Sign & Approve</button>
+                            <div key={i} style={{ padding: '1rem', borderRadius: '6px', border: '1px solid #f1f5f9' }}>
+                                <p style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.2rem' }}>{rep.patient}</p>
+                                <p style={{ fontSize: '0.75rem', opacity: 0.5, marginBottom: '0.8rem' }}>{rep.test}</p>
+                                <button className="btn" style={{ padding: '0.5rem', fontSize: '0.75rem', width: '100%', justifyContent: 'center', background: 'var(--primary)', color: 'white', borderRadius: '4px' }}>Sign & Approve</button>
                             </div>
                         ))}
                     </div>

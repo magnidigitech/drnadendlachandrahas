@@ -10,19 +10,19 @@ export default function Home() {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        background: 'radial-gradient(circle at top right, rgba(238, 149, 158, 0.08), transparent), radial-gradient(circle at bottom left, rgba(244, 114, 182, 0.05), transparent)'
+        background: 'var(--primary-light)'
       }}>
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '4rem', alignItems: 'center' }}>
           <div>
-            <h1 style={{ fontSize: '4.5rem', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-              Compassionate <span className="gradient-text">Women's Care</span> by Dr. Chandrahas
+            <h1 style={{ fontSize: '4.2rem', lineHeight: 1, marginBottom: '2rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.04em' }}>
+              Excellence in <br /><span style={{ color: 'var(--accent)' }}>Women's Health</span>
             </h1>
-            <p style={{ fontSize: '1.25rem', opacity: 0.8, marginBottom: '2.5rem', lineHeight: 1.6 }}>
-              Specializing in High-Risk Pregnancy Management, Infertility, and Advanced Laparoscopic Surgery with over 8 years of dedicated clinical excellence.
+            <p style={{ fontSize: '1.2rem', opacity: 0.7, marginBottom: '3rem', lineHeight: 1.7, maxWidth: '540px' }}>
+              Dr. Nadendla Chandrahas provides evidence-based, patient-centric care specializing in High-Risk Pregnancy and Advanced Laparoscopy.
             </p>
-            <div style={{ display: 'flex', gap: '1.5rem' }}>
-              <a href="#contact" className="btn btn-primary">Book Consultation</a>
-              <a href="#services" className="btn glass" style={{ padding: '0.8rem 2rem' }}>Our Services</a>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <a href="#contact" className="btn" style={{ background: 'var(--primary)', color: 'white', borderRadius: '4px', padding: '1rem 2.5rem' }}>Book Consultation</a>
+              <a href="#services" className="btn" style={{ border: '1px solid var(--glass-border)', borderRadius: '4px', padding: '1rem 2.5rem' }}>View Services</a>
             </div>
 
             <div style={{ marginTop: '4rem', display: 'flex', gap: '3rem' }}>
@@ -77,24 +77,24 @@ export default function Home() {
             {[
               {
                 title: "High-Risk Pregnancy",
-                desc: "Comprehensive care for complex pregnancies, ensuring safety for both mother and child.",
-                icon: "🍼"
+                desc: "Specialized care for complex maternal-fetal conditions with protocol-driven safety measures.",
+                icon: "🏥"
               },
               {
                 title: "Laparoscopic Surgery",
-                desc: "Minimally invasive procedures for faster recovery and minimal scarring.",
+                desc: "Minimally invasive surgical solutions for rapid recovery and clinical precision.",
                 icon: "🔬"
               },
               {
                 title: "Infertility Support",
-                desc: "Advanced evaluation and personalized fertility treatments to help you start your journey.",
+                desc: "Comprehensive diagnostic evaluations and evidence-based fertility management.",
                 icon: "✨"
               }
             ].map((s, i) => (
-              <div key={i} className="glass" style={{ padding: '3rem 2rem', borderRadius: '30px', transition: 'transform 0.3s ease' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>{s.icon}</div>
-                <h3 style={{ marginBottom: '1rem' }}>{s.title}</h3>
-                <p style={{ opacity: 0.7, lineHeight: 1.6 }}>{s.desc}</p>
+              <div key={i} style={{ padding: '3.5rem 2.5rem', border: '1px solid var(--glass-border)', borderRadius: '12px', transition: 'all 0.3s ease', background: 'white' }}>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>{s.icon}</div>
+                <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>{s.title}</h3>
+                <p style={{ opacity: 0.6, lineHeight: 1.7, fontSize: '0.95rem' }}>{s.desc}</p>
               </div>
             ))}
           </div>

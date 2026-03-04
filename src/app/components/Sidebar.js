@@ -6,18 +6,18 @@ export default function Sidebar({ links, userType }) {
     const pathname = usePathname();
 
     return (
-        <aside className="glass" style={{
-            width: '280px',
+        <aside style={{
+            width: '260px',
             height: '100vh',
             position: 'fixed',
             left: 0,
             top: 0,
             display: 'flex',
             flexDirection: 'column',
-            padding: '2rem 1.5rem',
+            padding: '2.5rem 1.5rem',
             borderRight: '1px solid var(--glass-border)',
             zIndex: 100,
-            background: 'white'
+            background: 'var(--background)'
         }}>
             <div style={{ marginBottom: '3rem', padding: '0 0.5rem' }}>
                 <Link href="/" className="gradient-text" style={{ fontSize: '1.8rem', fontWeight: 900 }}>
@@ -38,14 +38,14 @@ export default function Sidebar({ links, userType }) {
                                 gap: '1rem',
                                 padding: '1rem 1.2rem',
                                 borderRadius: '16px',
-                                fontWeight: isActive ? 700 : 500,
-                                color: isActive ? 'var(--primary)' : 'var(--foreground)',
-                                background: isActive ? 'rgba(238, 149, 158, 0.1)' : 'transparent',
-                                transition: 'all 0.2s ease',
-                                opacity: isActive ? 1 : 0.7
+                                fontWeight: isActive ? 600 : 400,
+                                color: isActive ? 'var(--accent)' : 'var(--secondary)',
+                                background: isActive ? 'var(--primary-light)' : 'transparent',
+                                transition: 'all 0.15s ease',
+                                letterSpacing: '-0.01em'
                             }}
                             onMouseEnter={(e) => {
-                                if (!isActive) e.currentTarget.style.background = 'rgba(238, 149, 158, 0.05)';
+                                if (!isActive) e.currentTarget.style.background = 'var(--primary-light)';
                             }}
                             onMouseLeave={(e) => {
                                 if (!isActive) e.currentTarget.style.background = 'transparent';

@@ -16,59 +16,60 @@ export default function DoctorPatients() {
     );
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h2 style={{ fontSize: '1.8rem', fontWeight: 800 }}>Patient <span className="gradient-text">Management</span></h2>
-                <button className="btn btn-primary">+ New Patient</button>
+                <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.05em' }}>PATIENT DATABASE</h2>
+                <button className="btn" style={{ background: 'var(--primary)', color: 'white', borderRadius: '4px', padding: '0.6rem 1.5rem', fontSize: '0.9rem' }}>+ ADD NEW PATIENT</button>
             </div>
 
-            <div className="glass" style={{ padding: '1.5rem', borderRadius: '20px', display: 'flex', gap: '1rem' }}>
+            <div style={{ padding: '1.2rem', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'white', display: 'flex', gap: '1rem' }}>
                 <input
                     type="text"
-                    placeholder="Search patients by name..."
-                    style={{ flex: 1, padding: '1rem 1.5rem', borderRadius: '15px', border: '1px solid var(--glass-border)', outline: 'none', fontSize: '1rem' }}
+                    placeholder="Search by name, ID or contact..."
+                    style={{ flex: 1, padding: '0.8rem 1.2rem', borderRadius: '4px', border: '1px solid #e2e8f0', outline: 'none', fontSize: '0.9rem' }}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
-                <select style={{ padding: '1rem', borderRadius: '15px', border: '1px solid var(--glass-border)', outline: 'none', background: 'white' }}>
-                    <option>All Status</option>
-                    <option>High Risk</option>
-                    <option>Healthy</option>
-                    <option>Observation</option>
+                <select style={{ padding: '0.8rem', borderRadius: '4px', border: '1px solid #e2e8f0', outline: 'none', background: 'white', fontSize: '0.9rem', color: 'var(--secondary)', fontWeight: 600 }}>
+                    <option>STATUS: ALL</option>
+                    <option>HIGH RISK</option>
+                    <option>HEALTHY</option>
+                    <option>OBSERVATION</option>
                 </select>
             </div>
 
-            <div className="glass" style={{ borderRadius: '30px', overflow: 'hidden' }}>
+            <div style={{ borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'white', overflow: 'hidden' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-                    <thead style={{ background: 'var(--primary-light)', color: 'var(--primary)' }}>
+                    <thead style={{ background: '#f8fafc', borderBottom: '1px solid var(--glass-border)' }}>
                         <tr>
-                            <th style={{ padding: '1.5rem' }}>Name</th>
-                            <th style={{ padding: '1.5rem' }}>Age</th>
-                            <th style={{ padding: '1.5rem' }}>Blood Group</th>
-                            <th style={{ padding: '1.5rem' }}>Status</th>
-                            <th style={{ padding: '1.5rem' }}>Last Visit</th>
-                            <th style={{ padding: '1.5rem' }}>Actions</th>
+                            <th style={{ padding: '1.2rem', fontSize: '0.75rem', fontWeight: 800, color: 'var(--secondary)', textTransform: 'uppercase' }}>Patient Name</th>
+                            <th style={{ padding: '1.2rem', fontSize: '0.75rem', fontWeight: 800, color: 'var(--secondary)', textTransform: 'uppercase' }}>Age</th>
+                            <th style={{ padding: '1.2rem', fontSize: '0.75rem', fontWeight: 800, color: 'var(--secondary)', textTransform: 'uppercase' }}>Blood</th>
+                            <th style={{ padding: '1.2rem', fontSize: '0.75rem', fontWeight: 800, color: 'var(--secondary)', textTransform: 'uppercase' }}>Status</th>
+                            <th style={{ padding: '1.2rem', fontSize: '0.75rem', fontWeight: 800, color: 'var(--secondary)', textTransform: 'uppercase' }}>Last Visit</th>
+                            <th style={{ padding: '1.2rem', fontSize: '0.75rem', fontWeight: 800, color: 'var(--secondary)', textTransform: 'uppercase', textAlign: 'right' }}>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {filteredPatients.map(p => (
-                            <tr key={p.id} style={{ borderBottom: '1px solid var(--glass-border)' }}>
-                                <td style={{ padding: '1.5rem', fontWeight: 700 }}>{p.name}</td>
-                                <td style={{ padding: '1.5rem' }}>{p.age}</td>
-                                <td style={{ padding: '1.5rem' }}>{p.group}</td>
-                                <td style={{ padding: '1.5rem' }}>
+                            <tr key={p.id} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                                <td style={{ padding: '1.2rem', fontWeight: 700, color: 'var(--primary)', fontSize: '0.95rem' }}>{p.name}</td>
+                                <td style={{ padding: '1.2rem', fontSize: '0.9rem', color: 'var(--secondary)' }}>{p.age}</td>
+                                <td style={{ padding: '1.2rem', fontSize: '0.9rem', color: 'var(--secondary)' }}>{p.group}</td>
+                                <td style={{ padding: '1.2rem' }}>
                                     <span style={{
-                                        padding: '0.4rem 1rem',
-                                        borderRadius: '20px',
-                                        fontSize: '0.8rem',
-                                        fontWeight: 700,
-                                        background: p.status === 'High Risk' ? 'rgba(239, 68, 68, 0.1)' : 'rgba(238, 149, 158, 0.1)',
-                                        color: p.status === 'High Risk' ? '#ef4444' : 'var(--primary)'
-                                    }}>{p.status}</span>
+                                        padding: '0.3rem 0.8rem',
+                                        borderRadius: '4px',
+                                        fontSize: '0.7rem',
+                                        fontWeight: 800,
+                                        background: p.status === 'High Risk' ? 'rgba(239, 68, 68, 0.05)' : 'var(--primary-light)',
+                                        color: p.status === 'High Risk' ? '#ef4444' : 'var(--accent)',
+                                        border: `1px solid ${p.status === 'High Risk' ? 'rgba(239, 68, 68, 0.1)' : 'var(--glass-border)'}`
+                                    }}>{p.status.toUpperCase()}</span>
                                 </td>
-                                <td style={{ padding: '1.5rem' }}>{p.lastVisit}</td>
-                                <td style={{ padding: '1.5rem' }}>
-                                    <button className="btn glass" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>View Profile</button>
+                                <td style={{ padding: '1.2rem', fontSize: '0.9rem', color: 'var(--secondary)' }}>{p.lastVisit}</td>
+                                <td style={{ padding: '1.2rem', textAlign: 'right' }}>
+                                    <button className="btn" style={{ padding: '0.5rem 1rem', fontSize: '0.75rem', border: '1px solid #e2e8f0', borderRadius: '4px', background: 'white', fontWeight: 700 }}>VIEW FILE</button>
                                 </td>
                             </tr>
                         ))}

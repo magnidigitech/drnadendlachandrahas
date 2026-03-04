@@ -1,15 +1,19 @@
 :root {
-  --primary: #ee959e;
-  /* Soft Pink Requested */
-  --primary-light: #fbeaea;
-  --secondary: #f472b6;
-  /* Lighter Pink for gradients */
-  --accent: #ee959e;
+  --primary: #0f172a;
+  /* Slate 900 - Deep Professional Navy */
+  --primary-light: #f1f5f9;
+  /* Slate 100 - Very Light Blue/Gray */
+  --secondary: #334155;
+  /* Slate 700 - Professional Gray */
+  --accent: #3b82f6;
+  /* Subtle Blue for call-to-actions */
   --background: #ffffff;
-  --foreground: #1f2937;
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(238, 149, 158, 0.2);
-  --shadow: 0 4px 24px 0 rgba(238, 149, 158, 0.1);
+  --foreground: #0f172a;
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: #e2e8f0;
+  /* Slate 200 */
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --font-main: var(--font-outfit), sans-serif;
   --font-heading: var(--font-inter), sans-serif;
 }
